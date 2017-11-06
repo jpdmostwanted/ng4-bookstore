@@ -1,0 +1,26 @@
+<table class="table table-striped table-responsive">
+  <thead class="table-inversed">
+    <th>Title</th>
+    <th>Description</th>
+    <th>Genre</th>
+    <th>Created Date</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.title }}</td>
+      <td>{{ book.description }}</td>
+      <td>{{ book.genre }}</td>
+      <td>{{ book.created_date }}</td>
+      <td>
+        <a [routerLink]="['/books', book._id]">
+          <i class="glyphicon glyphicon-edit">Edit</i>
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteUser(book)" href="">
+          <i class="glyphicon glyphicon-delete">Delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
