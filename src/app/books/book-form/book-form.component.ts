@@ -23,9 +23,11 @@ export class BookFormComponent implements OnInit {
     private booksService: BooksService
   ) {
 this.form =  new FormGroup({
+  id : new FormControl(),
  title : new FormControl(),
  description : new FormControl(),
- genre : new FormControl()
+ genre : new FormControl(),
+ created_date : new FormControl()
 })
   }
 
@@ -53,7 +55,7 @@ this.form =  new FormGroup({
     var result,
     bookValue = this.form.value;
 
-    if (bookValue.id){
+    if (bookValue.id){ //this has to be checked
       result = this.booksService.updateBook(bookValue);
     } else {
       result = this.booksService.addBook(bookValue);

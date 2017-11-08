@@ -18,7 +18,7 @@ export class BooksComponent implements OnInit {
     }
   
     deleteUser(book){
-      if (confirm("Are you sure you want to delete " + book.name + "?")) {
+      if (confirm("Are you sure you want to delete " + book.title + "?")) {
         var index = this.books.indexOf(book);
         this.books.splice(index, 1);
   

@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 <div class="row">
   <form class="col-md-12" [formGroup]="form" (ngSubmit)="save()">
-    <!-- <input type="hidden" formControlName = "_id" [(ngModel)]="book._id" hidden> -->
+    <input type="hidden" formControlName = "id" [(ngModel)]="book.id" hidden>
     <div class="row">
       <div class="col-md-12">
         <label for="title">Title</label>
@@ -18,6 +18,13 @@
       <div class="col-md-12">
         <label for="genre">Genre</label>
         <input type="text" formControlName="genre" class="form-control" id="genre"  [(ngModel)]="book.genre">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="genre">Created Date</label>
+        <input type="text" formControlName="created_date" class="form-control" id="created_date"  [(ngModel)]="book.created_date">
       </div>
     </div>
 
